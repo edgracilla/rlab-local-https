@@ -1,0 +1,25 @@
+{
+  "name": "rlab-local-https",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edgracilla/rlab-local-https.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/edgracilla/rlab-local-https/issues"
+  },
+  "homepage": "https://github.com/edgracilla/rlab-local-https#readme",
+  "dependencies": {
+    "fastify": "^3.0.3",
+    "fastify-static": "^3.1.0",
+    "firebase-admin": "^9.0.0",
+    "https-localhost": "^4.6.0"
+  }
+}
