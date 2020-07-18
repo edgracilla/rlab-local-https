@@ -4,21 +4,19 @@ var firebaseConfig = {
 }
 
 // Initialize Firebase
-var ret = firebase.initializeApp(firebaseConfig);
-
-console.log('--a', ret.name)
-
+const ret = firebase.initializeApp(firebaseConfig);
 const provider = new firebase.auth.FacebookAuthProvider()
 
-// --
 firebase.auth().signInWithPopup(provider).then(function(result) {
   // This gives you a Facebook Access Token. You can use it to access the Facebook API.
   var token = result.credential.accessToken;
   // The signed-in user info.
-  var user = result.user;
+  
+  var user = JSON.parse(JSON.stringify(result.user))
 
-  console.log('--b', JSON.stringify(user))
-  // ...
+  console.log(`Bearer ${user.stsTokenManager.accessToken}`)
+  // console.log(`Bearer ${token}`)
+
 }).catch(function(error) {
   console.log('--c', error)
   // Handle Errors here.
@@ -30,6 +28,3 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
   var credential = error.credential;
   // ...
 })
-
-console.log('--d')
-// --
